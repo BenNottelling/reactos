@@ -43,7 +43,7 @@ _1 = %cdname%,%cdtagfile%,,""
 
 [DiskSpaceRequirements]
 ; Required free system partition disk space in MB
-FreeSysPartDiskSpace=450
+FreeSysPartDiskSpace=250
 
 ;
 ; The [SourceDisksFiles] section lists all the files available to the
