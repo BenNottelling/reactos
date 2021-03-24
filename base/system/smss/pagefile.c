@@ -21,9 +21,9 @@
 #define STANDARD_PAGING_FILE_NAME       L"\\??\\?:\\pagefile.sys"
 #define STANDARD_DRIVE_LETTER_OFFSET    4
 #define MEGABYTE                        0x100000UL
-#define MAXIMUM_PAGEFILE_SIZE           (4095 * MEGABYTE)
+#define MAXIMUM_PAGEFILE_SIZE           (32 * MEGABYTE)
 /* This should be 32 MB, but we need more than that for 2nd stage setup */
-#define MINIMUM_TO_KEEP_FREE            (256 * MEGABYTE)
+#define MINIMUM_TO_KEEP_FREE            (32 * MEGABYTE)
 #define FUZZ_FACTOR                     (16 * MEGABYTE)
 
 //
