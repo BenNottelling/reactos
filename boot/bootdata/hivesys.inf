@@ -2,6 +2,8 @@
 Signature = "$Windows NT$"
 
 [AddReg]
+; Whatever the heck I want
+HKLM, "Software\Policies\Microsoft\Windows\DeviceInstall\Settings","SuppressNewHWUI",0x00010001,0x00000001
 
 HKLM,"SYSTEM\CurrentControlSet\Control","CurrentUser",2,"USERNAME"
 HKLM,"SYSTEM\CurrentControlSet\Control","WaitToKillServiceTimeout",2,"20000"
