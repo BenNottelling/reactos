@@ -8,6 +8,9 @@
     NOTES:
         Ah, the Sound Blaster 16. I remember it well...
 */
+#ifdef _NEW_DELETE_OPERATORS_
+#undef _NEW_DELETE_OPERATORS_
+#endif
 
 #include <portcls.h>
 #include <stdunk.h>
@@ -114,7 +117,7 @@ DECLARE_INTERFACE_(IAdapterSB16, IUnknown)
 
     STDMETHOD_(PINTERRUPTSYNC, GetInterruptSync)( THIS ) PURE;
 
-    STDMETHOD_(void, SetWaveMiniport)( THIS_
+    STDMETHOD_(NTSTATUS, SetWaveMiniport)( THIS_
         IN  PWAVEMINIPORTSB16 Miniport) PURE;
 
     STDMETHOD_(BYTE, Read)( THIS ) PURE;

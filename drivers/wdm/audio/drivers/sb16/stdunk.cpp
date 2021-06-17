@@ -8,6 +8,9 @@
     AUTHORS
         Andrew Greenwood
 */
+#ifdef _NEW_DELETE_OPERATORS_
+#undef _NEW_DELETE_OPERATORS_
+#endif
 
 #include <stdunk.h>
 

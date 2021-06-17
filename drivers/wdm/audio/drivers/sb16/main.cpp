@@ -313,13 +313,15 @@ StartDevice(
 
     Resources DeviceResources;
 
+/*
     PUNKNOWN UnknownTopology = NULL;
     PUNKNOWN UnknownWave = NULL;
     PUNKNOWN UnknownWaveTable = NULL;
     PUNKNOWN UnknownFmSynth = NULL;
 
-//    PADAPTERCOMMON AdapterCommon = NULL;
+    PADAPTERCOMMON AdapterCommon = NULL;
     PUNKNOWN UnknownCommon = NULL;
+*/
 
     status = AssignResources(ResourceList, &DeviceResources);
 
@@ -338,7 +340,7 @@ AddDevice(
 {
     return PcAddAdapterDevice(DriverObject,
                               PhysicalDeviceObject,
-                              StartDevice,
+                              (PCPFNSTARTDEVICE)StartDevice,
                               MAX_MINIPORTS,
                               0);
 }

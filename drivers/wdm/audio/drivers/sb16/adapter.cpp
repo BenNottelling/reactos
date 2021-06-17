@@ -1,4 +1,5 @@
 #include "sb16.h"
+extern "C" void __cxa_pure_virtual() { while (1); }
 
 class CAdapterSB16 :
     public IAdapterSB16,
@@ -16,7 +17,7 @@ class CAdapterSB16 :
 
         STDMETHODIMP_(PINTERRUPTSYNC) GetInterruptSync(void);
 
-        STDMETHODIMP_(void) SetWaveMiniport(
+        STDMETHODIMP_(NTSTATUS) SetWaveMiniport(
             IN  PWAVEMINIPORTSB16 Miniport);
 
         STDMETHODIMP_(BYTE) Read(void);
@@ -35,7 +36,7 @@ class CAdapterSB16 :
 
         STDMETHODIMP_(void) ResetMixer(void);
 
-        //IMP_IAdapterPowerManagement;
+        IMP_IAdapterPowerManagement;
 };
 
 
@@ -60,7 +61,7 @@ NTSTATUS CAdapterSB16::Init(
 CAdapterSB16::~CAdapterSB16()
 {
 }
-/*
+
 STDMETHODIMP
 CAdapterSB16::NonDelegatingQueryInterface(
     REFIID Interface,
@@ -68,7 +69,7 @@ CAdapterSB16::NonDelegatingQueryInterface(
 {
     return STATUS_UNSUCCESSFUL;
 }
-*/
+
 STDMETHODIMP_(PINTERRUPTSYNC)
 CAdapterSB16::GetInterruptSync()
 {
@@ -114,13 +115,14 @@ CAdapterSB16::ResetMixer()
 }
 
 
-STDMETHODIMP_(void)
+STDMETHODIMP_(NTSTATUS)
 SetWaveMiniport(
      IN  PWAVEMINIPORTSB16 Miniport)
 {
+	return STATUS_UNSUCCESSFUL;
 }
 
-/*
+
 STDMETHODIMP_(void)
 CAdapterSB16::PowerChangeState(
     IN  POWER_STATE NewState)
@@ -140,4 +142,4 @@ CAdapterSB16::QueryDeviceCapabilities(
 {
     return STATUS_UNSUCCESSFUL;
 }
-*/
+
